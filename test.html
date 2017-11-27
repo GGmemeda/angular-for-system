@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .use-click {
+      text-decoration: underline;
+      color: red;
+      cursor: pointer;
+    }
+
+    .hide-button {
+      position: absolute;
+    }
+    .use-click{
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+<div class="use-click">12131</div>
+<div class="">12131</div>
+<div class="">12131</div>
+<div class="">12131d</div>
+<div class="">12131d</div>
+<div class="">12131d</div>
+<div class="">12131d</div>
+<div class="">12131d</div>
+<div class="">12131d</div>
+<div class="use-click">12131d</div>
+<div class="">12131d</div>
+<div class="">12131d</div>
+<div class="">12131d</div>
+<div class="use-click">12131d</div>
+
+</body>
+<script>
+  window.onload = function () {
+    var para=document.createElement("div");
+      var templete=document.getElementById('templete').innerHTML;
+    para.innerHTML=templete;
+    document.body.appendChild(para);
+    var items = document.getElementsByClassName('use-click');
+    for (var i = 0; i < items.length; i++) {
+      items[i].onclick = function (e) {
+        var buttons = document.getElementById('hideButton');
+        console.log(e.pageX, e.pageY);
+        buttons.style.left = e.pageX + 'px';
+        buttons.style.top = e.pageY + 'px';
+        buttons.style.display = 'block';
+      };
+    }
+  };
+</script>
+<script type="text/html" id="templete">
+  <div id="hideButton" class="hide-button" style="display: none">
+    <div>
+      <button>点击左边</button>
+    </div>
+    <button>点击右边</button>
+  </div>
+</script>
+</html>
