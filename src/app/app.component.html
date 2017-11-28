@@ -1,17 +1,7 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <div *ngIf="selectedHero">
-    <label>name: </label>
-    <input [(ngModel)]="selectedHero.name" placeholder="name"/>
-  </div>
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul  class="heroes">
-  <li [class.selected]="item === selectedHero" *ngFor="let item of heroes" (click)="onSelect(item)">
-    <span class="badge">{{item.id}}</span>{{item.name}}
-  </li>
-</ul>
-<hero-detail [hero]="selectedHero"></hero-detail>
+  <h1>{{title}}</h1>
+  <nav>
+    <a routerLink="/dashboard"  routerLinkActive="active">Dashboard</a>
+    <a routerLink="/heroes"  routerLinkActive="active">Heroes</a>
+  </nav>
+  <router-outlet></router-outlet>
+
