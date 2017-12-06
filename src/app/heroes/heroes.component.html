@@ -5,9 +5,10 @@
     <input #heroName />
   </label>
   <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(heroName.value); heroName.value=''">
+  <button  mat-button (click)="add(heroName.value); heroName.value=''">
     add
   </button>
+  <button mat-raised-button>我是material UI</button>
 </div>
 
 <ul class="heroes">
